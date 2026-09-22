@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Generative Search + Recommendations</title>
+    <meta
+      name="description"
+      content="NeurIPS 2026 Workshop on Generative Search + Recommendations. Sunday, December 6, 2026 at the International Convention Centre, Sydney, Australia."
+    >
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Generative Search + Recommendations">
+    <meta
+      property="og:description"
+      content="NeurIPS 2026 Workshop on Generative Search + Recommendations in Sydney, Australia."
+    >
+    <meta property="og:image" content="assets/hero-signal-field.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Workshop home">GenRec 2026</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        Menu
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+        <a href="#about">About</a>
+        <a href="#speakers">Invited Speakers</a>
+        <a href="#organizers">Organizers</a>
+        <a href="#schedule">Schedule</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="container hero-inner">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">NeurIPS 2026 Workshop</p>
+            <h1 id="hero-title">Generative Search + Recommendations</h1>
+            <p class="subtitle">Generative models for discovery, retrieval, ranking, and recommendation.</p>
+            <p class="event-meta">
+              <span>NeurIPS 2026</span>
+              <span>Sunday, December 6, 2026</span>
+              <span>Sydney, Australia timezone</span>
+              <span>International Convention Centre, Sydney, Australia</span>
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#schedule">View Schedule</a>
+              <a class="button secondary" href="mailto:antoine.atallah@shopify.com,shuying.sun@shopify.com,akshay.soni@shopify.com,juhana.kangaspunta@shopify.com">Contact Organizers</a>
+            </div>
+          </div>
+
+          <figure class="hero-visual reveal" style="--delay: 120ms">
+            <div
+              class="discovery-animation"
+              data-discovery-animation
+              aria-label="Animated diagram showing user history and search intent flowing into a generative model that produces candidates for shopping, music, video, news, and ads."
+            >
+              <div class="flow-column flow-input">
+                <p class="flow-label">User History + Query</p>
+                <div class="history-chip">searched <strong>hiking shoes</strong></div>
+                <div class="history-chip">watched <strong>camera review</strong></div>
+                <div class="history-chip">liked <strong>synth playlist</strong></div>
+                <div class="history-chip">cart <strong>rain jacket</strong></div>
+                <div class="query-chip">query: lightweight trail gear</div>
+              </div>
+
+              <div class="model-core">
+                <p>Generative Model</p>
+                <div class="latent-ring">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="token-stream">
+                  <span>u<sub>t-3</sub></span>
+                  <span>u<sub>t-2</sub></span>
+                  <span>q<sub>t</sub></span>
+                  <span>item<sub>t+1</sub></span>
+                </div>
+              </div>
+
+              <div class="flow-column flow-output">
+                <p class="flow-label">Generated Candidates</p>
+                <button class="candidate-card is-active" type="button" data-candidate="shop" aria-pressed="true">
+                  <span>Shop Item</span>
+                  <strong>trail runner</strong>
+                </button>
+                <button class="candidate-card" type="button" data-candidate="music" aria-pressed="false">
+                  <span>Music</span>
+                  <strong>focus mix</strong>
+                </button>
+                <button class="candidate-card" type="button" data-candidate="video" aria-pressed="false">
+                  <span>Video</span>
+                  <strong>gear review</strong>
+                </button>
+                <button class="candidate-card" type="button" data-candidate="news" aria-pressed="false">
+                  <span>News</span>
+                  <strong>outdoor guide</strong>
+                </button>
+                <button class="candidate-card" type="button" data-candidate="ad" aria-pressed="false">
+                  <span>Ad</span>
+                  <strong>seasonal offer</strong>
+                </button>
+              </div>
+
+              <svg class="flow-lines" viewBox="0 0 100 100" preserveAspectRatio="none" role="presentation" focusable="false">
+                <path class="flow-path input-path" d="M28 31 C36 31 40 43 45 47"></path>
+                <path class="flow-path input-path input-path-two" d="M28 67 C36 67 40 56 45 53"></path>
+                <path class="flow-path candidate-path path-shop is-active" data-path="shop" d="M62 47 C67 34 70 24 74 22"></path>
+                <path class="flow-path candidate-path path-music" data-path="music" d="M62 49 C68 41 70 37 74 37"></path>
+                <path class="flow-path candidate-path path-video" data-path="video" d="M62 50 C68 50 70 50 74 50"></path>
+                <path class="flow-path candidate-path path-news" data-path="news" d="M62 51 C68 59 70 63 74 64"></path>
+                <path class="flow-path candidate-path path-ad" data-path="ad" d="M62 53 C67 68 70 76 74 78"></path>
+              </svg>
+            </div>
+            <figcaption class="sr-only">
+              User history and a search query condition a generative model, which directly produces
+              ranked candidates across shopping, music, video, news, and advertising.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section about" id="about" aria-labelledby="about-title">
+        <div class="container two-column">
+          <div class="section-title reveal">
+            <p class="eyebrow">About</p>
+            <h2 id="about-title">A workshop on generative models for search and recommendation systems.</h2>
+          </div>
+          <div class="prose reveal">
+            <p>
+              Search and recommendation systems are being reshaped by generative models that can understand
+              intent, synthesize candidates, reason over catalogs, and personalize experiences across modalities.
+            </p>
+            <p>
+              This workshop will bring together researchers and practitioners working on generative retrieval,
+              recommendation, ranking, evaluation, user modeling, multimodal discovery, agentic shopping and
+              content experiences, and the infrastructure required to serve these systems at scale.
+            </p>
+            <p>
+              The program will feature invited talks, discussions, and community exchange around the technical
+              and scientific foundations of generative search and recommendations at NeurIPS 2026.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section speakers" id="speakers" aria-labelledby="speakers-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Invited Speakers</p>
+            <h2 id="speakers-title">Invited speakers.</h2>
+          </div>
+          <div class="speaker-grid">
+            <article class="person-card reveal">
+              <div class="portrait">TBA</div>
+              <h3>Invited Speaker</h3>
+              <p>To be announced.</p>
+            </article>
+            <article class="person-card reveal">
+              <div class="portrait">TBA</div>
+              <h3>Invited Speaker</h3>
+              <p>To be announced.</p>
+            </article>
+            <article class="person-card reveal">
+              <div class="portrait">TBA</div>
+              <h3>Invited Speaker</h3>
+              <p>To be announced.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section organizers" id="organizers" aria-labelledby="organizers-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Organizers</p>
+            <h2 id="organizers-title">Organizing team.</h2>
+          </div>
+          <div class="organizer-grid">
+            <article class="person-card organizer-card reveal">
+              <a href="https://www.linkedin.com/in/aatallah" aria-label="Antoine Atallah profile">
+                <img class="portrait photo" src="assets/antoine-atallah.jpg" alt="Antoine Atallah">
+              </a>
+              <h3><a href="https://www.linkedin.com/in/aatallah">Antoine Atallah</a></h3>
+              <p>Shopify</p>
+              <span><a href="mailto:antoine.atallah@shopify.com">antoine.atallah@shopify.com</a></span>
+            </article>
+            <article class="person-card organizer-card reveal">
+              <img class="portrait photo" src="assets/shuying-sun.jpg" alt="Shuying Sun">
+              <h3>Shuying Sun</h3>
+              <p>Shopify</p>
+              <span><a href="mailto:shuying.sun@shopify.com">shuying.sun@shopify.com</a></span>
+            </article>
+            <article class="person-card organizer-card reveal">
+              <div class="portrait">AS</div>
+              <h3>Akshay Soni</h3>
+              <p>Shopify</p>
+              <span><a href="mailto:akshay.soni@shopify.com">akshay.soni@shopify.com</a></span>
+            </article>
+            <article class="person-card organizer-card reveal">
+              <div class="portrait">JK</div>
+              <h3>Juhana Kangaspunta</h3>
+              <p>Shopify</p>
+              <span><a href="mailto:juhana.kangaspunta@shopify.com">juhana.kangaspunta@shopify.com</a></span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section schedule" id="schedule" aria-labelledby="schedule-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Schedule</p>
+            <h2 id="schedule-title">Sunday, December 6, 2026. Sydney, Australia timezone.</h2>
+          </div>
+          <div class="schedule-table reveal">
+            <article class="schedule-row">
+              <time>TBA</time>
+              <div>
+                <h3>Workshop Program</h3>
+                <p>Detailed schedule, speakers, and session times will be announced closer to NeurIPS 2026.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span data-year></span> Generative Search + Recommendations Workshop.</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+  </body>
+</html>
